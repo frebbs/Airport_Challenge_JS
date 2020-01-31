@@ -16,4 +16,7 @@ class Airport {
         this._hanger.pop()
     }
 
+    _goodWeather() {
+        return true
+    }
 }

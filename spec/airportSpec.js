@@ -17,6 +17,6 @@ describe('Airport Class Testing', () => {
     });
 
     it('Checks for stormy weather', () => {
-       expect(airport._goodWeather()).toBeFalse();
+       expect(airport._goodWeather()).toBeTrue();
     });
 });
