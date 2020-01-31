@@ -90,3 +90,14 @@ Airport Class Testing
 * is initialised with an empty hanger
 * Allows landing at the airport
 ```
+
+# Onwards and Upwards, taking off from the airport
+
+Second user story
+
+```
+As an air traffic controller 
+So I can get passengers on the way to their destination 
+I want to instruct a plane to take off from an airport and confirm that it is no longer in the airport
+```
+
