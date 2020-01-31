@@ -12,4 +12,8 @@ class Airport {
         this._hanger.push(plane)
     }
 
+    liftOff(plane) {
+        this._hanger.pop()
+    }
+
 }

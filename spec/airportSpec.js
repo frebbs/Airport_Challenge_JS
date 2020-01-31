@@ -15,10 +15,4 @@ describe('Airport Class Testing', () => {
         airport.landRequest(plane);
         expect(airport.hanger()).toEqual([plane])
     });
-
-    it('Allows taking off from the airport', () => {
-        plane.landRequest(airport);
-        plane.liftOff();
-        expect(airport.hanger()).toBe.empty();
-    })
 });
