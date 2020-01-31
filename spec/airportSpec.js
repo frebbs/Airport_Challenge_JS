@@ -17,6 +17,11 @@ describe('Airport Class Testing', () => {
     });
 
     it('Checks for stormy weather', () => {
-       expect(airport._goodWeather()).toBeTrue();
+       expect(airport._goodWeather()).toBeTruthy();
+    });
+
+    it('Deny take off in stormy times', () => {
+        spyOn(airport, '_goodWeather').and.returnValue(false);
+        expect(()=>{airport.liftOff(plane);}).toThrowError('Unable to take off during stormy Weather')
     });
 });
