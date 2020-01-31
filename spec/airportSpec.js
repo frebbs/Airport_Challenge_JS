@@ -15,4 +15,8 @@ describe('Airport Class Testing', () => {
         airport.landRequest(plane);
         expect(airport.hanger()).toEqual([plane])
     });
+
+    it('Checks for stormy weather', () => {
+       expect(airport._goodWeather()).toBeFalse();
+    });
 });
