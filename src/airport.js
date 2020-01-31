@@ -19,7 +19,7 @@ class Airport {
         if(!this._goodWeather()) {
             throw new Error('Unable to take off during stormy Weather')
         }
-        this._hanger.pop()
+        this._hanger.pop(plane)
     }
 
     _goodWeather() {
