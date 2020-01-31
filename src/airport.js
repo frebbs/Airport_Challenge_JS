@@ -1,6 +1,7 @@
 class Airport {
 
-    constructor() {
+    constructor(weather) {
+        this._weather = typeof weather != 'undefined' ? weather : new Weather();
         this._hanger = [];
     }
 
@@ -9,17 +10,17 @@ class Airport {
     }
 
     landRequest(plane) {
-        if(!this._goodWeather()) {
+        if(!this._weather.badConditions()) {
             throw new Error('Unable to land during stormy Weather')
         }
         this._hanger.push(plane)
     }
 
     liftOff(plane) {
-        if(!this._goodWeather()) {
+        if(!this._weather.badConditions()) {
             throw new Error('Unable to take off during stormy Weather')
         }
-        this._hanger.pop(plane)
+        this._hanger.pop()
     }
 
     _goodWeather() {
