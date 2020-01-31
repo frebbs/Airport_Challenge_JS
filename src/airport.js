@@ -10,7 +10,7 @@ class Airport {
     }
 
     landRequest(plane) {
-        if(!this._weather.badConditions()) {
+        if(this._weather.badConditions()) {
             throw new Error('Unable to land during stormy Weather')
         }
         this._hanger.push(plane)

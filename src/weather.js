@@ -1,7 +1,7 @@
 class Weather {
 
     constructor() {
-        this._WeatherRandomness = 0.15
+        this._WeatherRandomness = .15
     }
 
     badConditions() {

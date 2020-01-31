@@ -1,9 +1,11 @@
 describe('Airport Class Testing', () => {
     let airport;
     let plane;
+    let weather;
 
     beforeEach( () => {
-        airport = new Airport();
+        weather = jasmine.createSpyObj('weather', ['badConditions']);
+        airport = new Airport(weather);
         plane = jasmine.createSpy('plane',['landRequest']);
     });
 
@@ -12,6 +14,7 @@ describe('Airport Class Testing', () => {
     });
 
     it('Allows landing at the airport', () => {
+        weather.badConditions.and.returnValue(false);
         airport.landRequest(plane);
         expect(airport.hanger()).toEqual([plane])
     });
@@ -26,7 +29,8 @@ describe('Airport Class Testing', () => {
     });
 
     it('Deny landing during stormy times', () => {
-        spyOn(airport, '_goodWeather').and.returnValue(false);
+        // spyOn(airport, '_goodWeather').and.returnValue(false);
+        weather.badConditions.and.returnValue(true);
         expect(()=>{airport.landRequest(plane);}).toThrowError('Unable to land during stormy Weather')
     })
 });
